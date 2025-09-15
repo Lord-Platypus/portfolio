@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/utils/theme/theme_builder.dart';
+import 'package:portfolio/core/utils/theme/themes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PortfolioApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class PortfolioApp extends StatelessWidget {
+  const PortfolioApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Portfolio',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: buildTheme(purpleColors), //TODO add dynamic change
     );
   }
 }
