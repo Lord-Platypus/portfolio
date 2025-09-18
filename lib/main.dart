@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/navigation/app_router.dart';
 import 'package:portfolio/core/utils/theme/theme_builder.dart';
 import 'package:portfolio/core/utils/theme/themes.dart';
 
-void main() {
+import 'injection_container.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDependency();
   runApp(const PortfolioApp());
 }
 
@@ -11,7 +16,8 @@ class PortfolioApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       title: 'Flutter Portfolio',
       theme: buildTheme(purpleColors), //TODO add dynamic change
     );
