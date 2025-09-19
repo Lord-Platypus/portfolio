@@ -6,7 +6,7 @@ import 'package:portfolio/features/start/presentation/start_page.dart';
 import '../presentation/pages/error_page.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: Routes.start,
+  initialLocation: Routes.portfolio,
   routes: [
     GoRoute(
       path: Routes.start,

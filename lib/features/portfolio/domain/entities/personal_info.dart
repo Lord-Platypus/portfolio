@@ -34,6 +34,8 @@ class PersonalInfoEntity extends Equatable {
     required this.aboutMe,
   });
 
+  String get fullName => '$name $surname';
+
   @override
   List<Object?> get props => [
     name,

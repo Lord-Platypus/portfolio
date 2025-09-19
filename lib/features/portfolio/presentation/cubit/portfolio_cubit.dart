@@ -19,9 +19,7 @@ class PortfolioCubit extends Cubit<PortfolioState> {
 
     if (result is DataSuccess && result.data != null) {
       emit(PortfolioDone(personalInfo: result.data));
-    }
-
-    if (result is DataFailed) {
+    } else if (result is DataFailed) {
       emit(PortfolioError(exception: result.exception!));
     }
   }

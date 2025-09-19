@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:portfolio/features/portfolio/data/data_sources/portfolio_data_source.dart';
 import 'package:portfolio/features/portfolio/data/models/language_skill.dart';
@@ -29,6 +31,7 @@ class PortfolioLocalService implements PortfolioDataSource {
             "Sono uno sviluppatore freelancer, offro servizi di consulenza informatica e creo app native e web con Flutter, mantenendomi in costante aggiornamento sulle novità e sui trend del mercato.",
       ),
       requestOptions: RequestOptions(path: ''),
+      statusCode: HttpStatus.ok,
     );
   }
 }
