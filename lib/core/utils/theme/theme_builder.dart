@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/utils/theme/themes.dart';
 
 import 'app_colors.dart';
 
 ThemeData buildTheme(AppColors colors) {
-  return ThemeData(
-    useMaterial3: true,
+  return portfolioTheme.copyWith(
     scaffoldBackgroundColor: colors.background,
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(fontSize: 16),
-    ),
     appBarTheme: AppBarTheme(
       backgroundColor: colors.primary,
       foregroundColor: colors.onPrimary,
