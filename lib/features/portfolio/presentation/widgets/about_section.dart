@@ -12,21 +12,14 @@ class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final title = AutoSizeText(
       context.localizations.about,
-      style: Theme
-          .of(
+      style: Theme.of(
         context,
-      )
-          .textTheme
-          .headlineMedium
-          ?.copyWith(fontWeight: FontWeight.bold),
+      ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
     );
 
     final description = AutoSizeText(
       aboutMe,
-      style: Theme
-          .of(context)
-          .textTheme
-          .bodyLarge,
+      style: Theme.of(context).textTheme.bodyLarge,
       minFontSize: 14,
       maxFontSize: 20,
     );
@@ -39,33 +32,26 @@ class AboutSection extends StatelessWidget {
 
     final child = context.isMobile()
         ? Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 16,
-      children: [title, description, chips],
-    )
-        : Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(child: title),
-        Expanded(
-          flex: 3,
-          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 16,
+            children: [title, description, chips],
+          )
+        : Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              description,
-              chips,
+              Expanded(child: title),
+              Expanded(
+                flex: 3,
+                child: Column(
+                  spacing: 16,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [description, chips],
+                ),
+              ),
             ],
-          ),
-        ),
-      ],
-    );
+          );
 
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: context.appColors.border, width: 2),
-        borderRadius: BorderRadius.circular(12),
-      ),
+    return Card(
       child: Padding(padding: const EdgeInsets.all(16), child: child),
     );
   }

@@ -24,6 +24,15 @@ ThemeData buildTheme(AppColors colors) {
         side: BorderSide(color: colors.onPrimary),
       ),
     ),
+    cardTheme: CardThemeData(
+      color: colors.surface,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(color: colors.border, width: 2),
+      ),
+      elevation: 0,
+      margin: EdgeInsets.zero,
+    ),
     extensions: [colors],
   );
 }
