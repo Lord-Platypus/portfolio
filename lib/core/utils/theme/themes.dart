@@ -32,7 +32,7 @@ final pdfPalette = const AppColors(
   background: Color(0xFFFFFFFF),
   surface: Color(0xFFFFFFFF),
   surfaceAlt: Color(0xFFF5F5F5),
-  primary: Color(0xFF886F6B),
+  primary: Color(0xFFE8431D),
   onPrimary: Color(0xFFFFFFFF),
   secondary: Color(0xFFA99E9B),
   onSecondary: Color(0xFF0B0B0B),

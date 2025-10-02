@@ -12,6 +12,18 @@ ThemeData buildTheme(AppColors colors) {
     ),
     cardColor: colors.surface,
     dividerColor: colors.border,
+    chipTheme: ChipThemeData(
+      backgroundColor: colors.primary,
+      labelStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: colors.onPrimary,
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(color: colors.onPrimary),
+      ),
+    ),
     extensions: [colors],
   );
 }

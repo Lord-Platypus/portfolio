@@ -40,19 +40,27 @@ class PortfolioPage extends StatelessWidget {
 
   Widget _buildPage(PortfolioDone state) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          spacing: 16,
-          children: [
-            HeroSection(personalInfo: state.personalInfo!,),
-            AboutSection(),
-            TechnologicalStackSection(),
-            WorkSection(),
-            ProjectsSection(),
-            EducationSection(),
-            ContactsSection(),
-          ],
+      child: Center(
+        child: SizedBox(
+          width: 1024,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              spacing: 16,
+              children: [
+                HeroSection(personalInfo: state.personalInfo!),
+                AboutSection(
+                  aboutMe: state.personalInfo!.aboutMe,
+                  labels: state.personalInfo!.aboutLabels,
+                ),
+                TechnologicalStackSection(),
+                WorkSection(),
+                ProjectsSection(),
+                EducationSection(),
+                ContactsSection(),
+              ],
+            ),
+          ),
         ),
       ),
     );

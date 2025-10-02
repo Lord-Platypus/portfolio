@@ -28,7 +28,15 @@ class PortfolioLocalService implements PortfolioDataSource {
         email: "emanuele.vinci.dev@gmail.com",
         phone: "+39 334 1089441",
         aboutMe:
-            "Sono uno sviluppatore freelancer, offro servizi di consulenza informatica e creo app native e web con Flutter, mantenendomi in costante aggiornamento sulle novità e sui trend del mercato.",
+            "I am a Senior Flutter Developer with a strong background in building cross-platform apps for both mobile and web. Over the years I have delivered projects ranging from internal business tools to consumer apps, often leading the frontend side.I focus on scalable architectures, maintainable code, and smooth user experiences.I enjoy working in synergy with designers and backend engineers to bring ideas to production. Alongside client work, I explore game development and contribute to local tech communities.",
+        aboutLabels: [
+          "Flutter",
+          "Remote only",
+          "Freelance",
+          "Clean Architecture",
+          "Bloc",
+          "SOLID",
+        ],
       ),
       requestOptions: RequestOptions(path: ''),
       statusCode: HttpStatus.ok,

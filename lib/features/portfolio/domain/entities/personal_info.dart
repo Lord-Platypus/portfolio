@@ -16,6 +16,7 @@ class PersonalInfoEntity extends Equatable {
   final String email;
   final String phone;
   final String aboutMe;
+  final List<String> aboutLabels;
 
   const PersonalInfoEntity({
     required this.name,
@@ -32,6 +33,7 @@ class PersonalInfoEntity extends Equatable {
     required this.email,
     required this.phone,
     required this.aboutMe,
+    required this.aboutLabels,
   });
 
   String get fullName => '$name $surname';

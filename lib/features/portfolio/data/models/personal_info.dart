@@ -18,6 +18,7 @@ class PersonalInfoModel extends PersonalInfoEntity {
     required super.email,
     required super.phone,
     required super.aboutMe,
+    required super.aboutLabels,
   });
 
   factory PersonalInfoModel.fromJson(Map<String, dynamic> json) {
@@ -38,6 +39,7 @@ class PersonalInfoModel extends PersonalInfoEntity {
       email: json['email'],
       phone: json['phone'],
       aboutMe: json['aboutMe'],
+      aboutLabels: List<String>.from(json['aboutLabels']),
     );
   }
 
@@ -59,6 +61,7 @@ class PersonalInfoModel extends PersonalInfoEntity {
       'email': email,
       'phone': phone,
       'aboutMe': aboutMe,
+      'aboutLabels': aboutLabels,
     };
   }
 }
