@@ -22,6 +22,7 @@ class HeroSection extends StatelessWidget {
             child: LayoutBuilder(
               builder: (context, constraints) =>
                   Container(
+
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: context.appColors.border,
@@ -40,34 +41,38 @@ class HeroSection extends StatelessWidget {
           ),
           Expanded(
             flex: 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AutoSizeText(
-                  personalInfo.fullName,
-                  maxLines: 2,
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .headlineLarge
-                      ?.copyWith(
-                    fontWeight: FontWeight.bold,
+            child: LayoutBuilder(builder: (context, constraints) =>
+                SizedBox(
+                  width: constraints.maxWidth,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AutoSizeText(
+                        personalInfo.fullName,
+                        maxLines: 1,
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .headlineLarge
+                            ?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      AutoSizeText(
+                        personalInfo.title,
+                        maxLines: 1,
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .headlineMedium
+                            ?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                AutoSizeText(
-                  personalInfo.title,
-                  maxLines: 2,
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .headlineMedium
-                      ?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
+                ),),
           ),
         ],
       ),
