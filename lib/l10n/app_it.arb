@@ -1,3 +1,5 @@
 {
-    "about": "About"
+    "about": "About",
+    "technologicalStack": "Stack Tecnologico",
+    "technologicalStackDescription": "Tecnologie e concetti che utilizzo ogni giorno."
 }

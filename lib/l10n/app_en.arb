@@ -1,3 +1,5 @@
 {
-    "about": "About"
+    "about": "About",
+    "technologicalStack": "Technological Stack",
+    "technologicalStackDescription": "A quick look at the technologies and concepts that I use every day."
 }

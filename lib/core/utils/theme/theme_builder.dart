@@ -33,6 +33,23 @@ ThemeData buildTheme(AppColors colors) {
       elevation: 0,
       margin: EdgeInsets.zero,
     ),
+    tabBarTheme: TabBarThemeData(
+      labelColor: colors.onPrimary,
+      labelStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: colors.onPrimary,
+      ),
+      dividerColor: colors.border,
+      dividerHeight: 2,
+      unselectedLabelColor: colors.border,
+      indicator: BoxDecoration(
+        color: colors.border,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      tabAlignment: TabAlignment.start,
+      labelPadding: EdgeInsets.symmetric(horizontal: 4),
+      splashBorderRadius: BorderRadius.circular(8),
+    ),
     extensions: [colors],
   );
 }

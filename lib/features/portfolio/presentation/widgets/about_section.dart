@@ -14,7 +14,7 @@ class AboutSection extends StatelessWidget {
       context.localizations.about,
       style: Theme.of(
         context,
-      ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
+      ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
     );
 
     final description = AutoSizeText(
@@ -38,6 +38,7 @@ class AboutSection extends StatelessWidget {
           )
         : Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 16,
             children: [
               Expanded(child: title),
               Expanded(

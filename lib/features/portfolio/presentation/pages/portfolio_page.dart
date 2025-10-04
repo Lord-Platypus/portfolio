@@ -11,6 +11,7 @@ import 'package:portfolio/features/portfolio/presentation/widgets/technological_
 import 'package:portfolio/features/portfolio/presentation/widgets/work_section.dart';
 
 import '../../domain/usecases/get_personal_info.dart';
+import '../../domain/usecases/get_technology_skills.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({super.key});
@@ -20,6 +21,7 @@ class PortfolioPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => PortfolioCubit(
         getPersonalInfoUserCase: GetIt.I<GetPersonalInfoUserCase>(),
+        getTechnologySkillsCase: GetIt.I<GetTechnologySkillsCase>(),
       )..getPortfolioInfos(),
       child: Scaffold(
         body: BlocBuilder<PortfolioCubit, PortfolioState>(
@@ -53,7 +55,7 @@ class PortfolioPage extends StatelessWidget {
                   aboutMe: state.personalInfo!.aboutMe,
                   labels: state.personalInfo!.aboutLabels,
                 ),
-                TechnologicalStackSection(),
+                TechnologicalStackSection(skillGroups: state.technologySkills!),
                 WorkSection(),
                 ProjectsSection(),
                 EducationSection(),

@@ -22,7 +22,7 @@ class PortfolioApp extends StatelessWidget {
       title: 'Flutter Portfolio',
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      theme: buildTheme(pdfPalette), //TODO add dynamic change
+      theme: buildTheme(minimalPalette),
     );
   }
 }

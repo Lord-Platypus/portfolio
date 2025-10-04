@@ -6,15 +6,21 @@ import 'package:portfolio/features/portfolio/data/repositories/portfolio_reposit
 import 'package:portfolio/features/portfolio/domain/usecases/get_personal_info.dart';
 
 import 'features/portfolio/domain/repositories/portfolio_repository.dart';
+import 'features/portfolio/domain/usecases/get_technology_skills.dart';
 
 final sl = GetIt.instance;
 
 Future<void> initializeDependency() async {
+  // External
   sl.registerSingleton<Dio>(Dio());
 
+  // Data sources
   sl.registerSingleton<PortfolioDataSource>(PortfolioLocalService());
 
+  // Repository
   sl.registerSingleton<PortfolioRepository>(PortfolioRepositoryImpl(sl()));
 
+  // Use Cases
   sl.registerSingleton<GetPersonalInfoUserCase>(GetPersonalInfoUserCase(sl()));
+  sl.registerSingleton<GetTechnologySkillsCase>(GetTechnologySkillsCase(sl()));
 }
