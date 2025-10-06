@@ -1,5 +1,9 @@
 {
     "about": "About",
     "technologicalStack": "Stack Tecnologico",
-    "technologicalStackDescription": "Tecnologie e concetti che utilizzo ogni giorno."
+    "technologicalStackDescription": "Tecnologie e concetti che utilizzo ogni giorno.",
+    "workingExperience": "Esperienza Lavorativa",
+    "company": "Azienda",
+    "projects": "Progetti",
+    "present": "Presente"
 }

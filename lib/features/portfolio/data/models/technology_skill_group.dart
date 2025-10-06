@@ -1,5 +1,5 @@
-import 'package:portfolio/features/portfolio/data/models/technology_skill.dart';
-import 'package:portfolio/features/portfolio/domain/entities/technology_skill_group.dart';
+import '../../domain/entities/technology_skill_group.dart';
+import 'technology_skill.dart';
 
 class TechnologySkillGroupModel extends TechnologySkillGroupEntity {
   const TechnologySkillGroupModel({

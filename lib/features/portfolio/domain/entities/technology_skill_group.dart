@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:portfolio/features/portfolio/domain/entities/technology_skill.dart';
+
+import 'technology_skill.dart';
 
 abstract class TechnologySkillGroupEntity extends Equatable {
   final String groupName;

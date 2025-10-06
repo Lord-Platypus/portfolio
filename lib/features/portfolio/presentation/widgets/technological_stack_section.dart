@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/utils/extensions/build_context_extension.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/skill_chip.dart';
 
+import '../../../../core/utils/extensions/build_context_extension.dart';
 import '../../domain/entities/technology_skill_group.dart';
+import 'skill_chip.dart';
 
 class TechnologicalStackSection extends StatelessWidget {
   const TechnologicalStackSection({super.key, required this.skillGroups});
@@ -27,7 +27,7 @@ class TechnologicalStackSection extends StatelessWidget {
         .map(
           (group) => Tab(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(group.groupName),
             ),
           ),
@@ -36,7 +36,7 @@ class TechnologicalStackSection extends StatelessWidget {
     final tabsContent = skillGroups
         .map(
           (group) => SingleChildScrollView(
-            padding: EdgeInsets.symmetric(vertical: 16),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             child: Wrap(
               spacing: 8,
               runSpacing: 8,
@@ -56,7 +56,7 @@ class TechnologicalStackSection extends StatelessWidget {
           children: [
             TabBar(
               tabs: tabs,
-              padding: EdgeInsets.symmetric(vertical: 4),
+              padding: const EdgeInsets.symmetric(vertical: 4),
               isScrollable: true,
             ),
             Expanded(child: TabBarView(children: tabsContent)),
@@ -88,7 +88,7 @@ class TechnologicalStackSection extends StatelessWidget {
           );
 
     return Card(
-      child: Padding(padding: EdgeInsetsGeometry.all(16), child: child),
+      child: Padding(padding: const EdgeInsetsGeometry.all(32), child: child),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/utils/extensions/build_context_extension.dart';
+
+import '../../../../core/utils/extensions/build_context_extension.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key, required this.aboutMe, required this.labels});
@@ -53,7 +54,7 @@ class AboutSection extends StatelessWidget {
           );
 
     return Card(
-      child: Padding(padding: const EdgeInsets.all(16), child: child),
+      child: Padding(padding: const EdgeInsets.all(32), child: child),
     );
   }
 }

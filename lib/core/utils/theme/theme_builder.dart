@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/utils/theme/themes.dart';
 
 import 'app_colors.dart';
+import 'themes.dart';
 
 ThemeData buildTheme(AppColors colors) {
   return portfolioTheme.copyWith(
@@ -44,11 +44,11 @@ ThemeData buildTheme(AppColors colors) {
       unselectedLabelColor: colors.border,
       indicator: BoxDecoration(
         color: colors.border,
-        borderRadius: BorderRadius.circular(8),
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(8))
       ),
       tabAlignment: TabAlignment.start,
-      labelPadding: EdgeInsets.symmetric(horizontal: 4),
-      splashBorderRadius: BorderRadius.circular(8),
+        labelPadding: const EdgeInsets.symmetric(horizontal: 4),
+        splashBorderRadius: const BorderRadius.vertical(top: Radius.circular(8))
     ),
     extensions: [colors],
   );

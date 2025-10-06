@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:portfolio/features/portfolio/domain/entities/language_skill.dart';
+
+import 'language_skill.dart';
 
 class PersonalInfoEntity extends Equatable {
   final String name;

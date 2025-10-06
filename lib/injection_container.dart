@@ -1,12 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:portfolio/features/portfolio/data/data_sources/portfolio_data_source.dart';
-import 'package:portfolio/features/portfolio/data/data_sources/portfolio_local_service.dart';
-import 'package:portfolio/features/portfolio/data/repositories/portfolio_repository_impl.dart';
-import 'package:portfolio/features/portfolio/domain/usecases/get_personal_info.dart';
 
+import 'features/portfolio/data/data_sources/portfolio_data_source.dart';
+import 'features/portfolio/data/data_sources/portfolio_local_service.dart';
+import 'features/portfolio/data/repositories/portfolio_repository_impl.dart';
 import 'features/portfolio/domain/repositories/portfolio_repository.dart';
+import 'features/portfolio/domain/usecases/get_personal_info.dart';
 import 'features/portfolio/domain/usecases/get_technology_skills.dart';
+import 'features/portfolio/domain/usecases/get_work_experiences.dart';
 
 final sl = GetIt.instance;
 
@@ -23,4 +24,5 @@ Future<void> initializeDependency() async {
   // Use Cases
   sl.registerSingleton<GetPersonalInfoUserCase>(GetPersonalInfoUserCase(sl()));
   sl.registerSingleton<GetTechnologySkillsCase>(GetTechnologySkillsCase(sl()));
+  sl.registerSingleton<GetWorkExperiencesCase>(GetWorkExperiencesCase(sl()));
 }

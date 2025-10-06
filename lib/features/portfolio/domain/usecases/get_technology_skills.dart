@@ -1,8 +1,7 @@
-import 'package:portfolio/core/resources/data_state.dart';
-import 'package:portfolio/features/portfolio/domain/repositories/portfolio_repository.dart';
-
+import '../../../../core/resources/data_state.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../entities/technology_skill_group.dart';
+import '../repositories/portfolio_repository.dart';
 
 class GetTechnologySkillsCase
     implements UseCase<DataState<List<TechnologySkillGroupEntity>>, void> {

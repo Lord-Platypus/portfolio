@@ -53,7 +53,7 @@ final ThemeData portfolioTheme = ThemeData(
 
 
 // COLOR PALETTES
-final redPalette = AppColors(
+final redPalette = const AppColors(
   background: Color(0xFF1E0E12),
   surface: Color(0xFF3B1E25),
   surfaceAlt: Color(0xFF522F36),
@@ -66,7 +66,7 @@ final redPalette = AppColors(
   border: Color(0xFF444444),
 );
 
-final purplePalette = AppColors(
+final purplePalette = const AppColors(
   background: Color(0xFFFFFFFF),
   surface: Color(0xFFF5F5FF),
   surfaceAlt: Color(0xFFE0E0FF),
@@ -85,8 +85,8 @@ final minimalPalette = const AppColors(
   surfaceAlt: Color(0xFFF5F5F5),
   primary: Color(0xFFE8431D),
   onPrimary: Color(0xFFFFFFFF),
-  secondary: Color(0xFFA99E9B),
-  onSecondary: Color(0xFF0B0B0B),
+  secondary: Colors.black,
+  onSecondary: Color(0xFFFFFFFF),
   text: Colors.black,
   textMuted: Color(0xFFA99E9B),
   border: Colors.black,

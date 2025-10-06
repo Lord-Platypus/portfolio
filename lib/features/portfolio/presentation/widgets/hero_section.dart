@@ -1,7 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/utils/extensions/build_context_extension.dart';
-import 'package:portfolio/features/portfolio/domain/entities/personal_info.dart';
+
+import '../../../../core/utils/extensions/build_context_extension.dart';
+import '../../domain/entities/personal_info.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key, required this.personalInfo});

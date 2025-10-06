@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/utils/extensions/build_context_extension.dart';
-import 'package:portfolio/features/portfolio/domain/entities/technology_skill.dart';
-import 'package:portfolio/features/portfolio/domain/enums/skill_level_enum.dart';
+
+import '../../../../core/utils/extensions/build_context_extension.dart';
+import '../../domain/entities/technology_skill.dart';
+import '../../domain/enums/skill_level_enum.dart';
 
 class SkillChip extends StatelessWidget {
   const SkillChip({super.key, required this.skill});
@@ -11,7 +12,7 @@ class SkillChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Chip(
-      color: WidgetStatePropertyAll(context.appColors.border),
+      color: WidgetStatePropertyAll(context.appColors.secondary),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),
 

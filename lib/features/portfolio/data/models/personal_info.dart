@@ -1,5 +1,4 @@
-import 'package:portfolio/features/portfolio/domain/entities/personal_info.dart';
-
+import '../../domain/entities/personal_info.dart';
 import 'language_skill.dart';
 
 class PersonalInfoModel extends PersonalInfoEntity {

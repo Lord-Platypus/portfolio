@@ -1,8 +1,7 @@
-import 'package:portfolio/core/resources/data_state.dart';
-import 'package:portfolio/features/portfolio/domain/entities/personal_info.dart';
-import 'package:portfolio/features/portfolio/domain/repositories/portfolio_repository.dart';
-
+import '../../../../core/resources/data_state.dart';
 import '../../../../core/usecases/usecase.dart';
+import '../entities/personal_info.dart';
+import '../repositories/portfolio_repository.dart';
 
 class GetPersonalInfoUserCase
     implements UseCase<DataState<PersonalInfoEntity>, void> {

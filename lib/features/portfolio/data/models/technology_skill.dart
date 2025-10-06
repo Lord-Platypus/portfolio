@@ -1,5 +1,5 @@
-import 'package:portfolio/features/portfolio/domain/entities/technology_skill.dart';
-import 'package:portfolio/features/portfolio/domain/enums/skill_level_enum.dart';
+import '../../domain/entities/technology_skill.dart';
+import '../../domain/enums/skill_level_enum.dart';
 
 class TechnologySkillModel extends TechnologySkillEntity {
   const TechnologySkillModel({required super.name, required super.level});

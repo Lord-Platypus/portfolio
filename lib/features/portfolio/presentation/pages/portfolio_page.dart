@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:portfolio/features/portfolio/presentation/cubit/portfolio_cubit.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/about_section.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/contacts_section.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/education_section.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/hero_section.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/projects_section.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/technological_stack_section.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/work_section.dart';
 
+import '../../../../core/utils/extensions/build_context_extension.dart';
 import '../../domain/usecases/get_personal_info.dart';
 import '../../domain/usecases/get_technology_skills.dart';
+import '../../domain/usecases/get_work_experiences.dart';
+import '../cubit/portfolio_cubit.dart';
+import '../widgets/about_section.dart';
+import '../widgets/contacts_section.dart';
+import '../widgets/education_section.dart';
+import '../widgets/hero_section.dart';
+import '../widgets/projects_section.dart';
+import '../widgets/technological_stack_section.dart';
+import '../widgets/work/work_section.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({super.key});
@@ -22,6 +24,7 @@ class PortfolioPage extends StatelessWidget {
       create: (context) => PortfolioCubit(
         getPersonalInfoUserCase: GetIt.I<GetPersonalInfoUserCase>(),
         getTechnologySkillsCase: GetIt.I<GetTechnologySkillsCase>(),
+        getWorkExperiencesCase: GetIt.I<GetWorkExperiencesCase>(),
       )..getPortfolioInfos(),
       child: Scaffold(
         body: BlocBuilder<PortfolioCubit, PortfolioState>(
@@ -30,7 +33,7 @@ class PortfolioPage extends StatelessWidget {
               case PortfolioLoading():
                 return const Center(child: CircularProgressIndicator());
               case PortfolioDone():
-                return _buildPage(state);
+                return _buildPage(context, state);
               case PortfolioError():
                 return const Center(child: Icon(Icons.close));
             }
@@ -40,30 +43,54 @@ class PortfolioPage extends StatelessWidget {
     );
   }
 
-  Widget _buildPage(PortfolioDone state) {
+  Widget _buildPage(BuildContext context, PortfolioDone state) {
     return SingleChildScrollView(
-      child: Center(
-        child: SizedBox(
-          width: 1024,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              spacing: 16,
-              children: [
-                HeroSection(personalInfo: state.personalInfo!),
-                AboutSection(
-                  aboutMe: state.personalInfo!.aboutMe,
-                  labels: state.personalInfo!.aboutLabels,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+            child: Center(
+              child: SizedBox(
+                width: 1024,
+                child: Column(
+                  spacing: 64,
+                  children: [
+                    HeroSection(personalInfo: state.personalInfo!),
+                    AboutSection(
+                      aboutMe: state.personalInfo!.aboutMe,
+                      labels: state.personalInfo!.aboutLabels,
+                    ),
+                    TechnologicalStackSection(
+                      skillGroups: state.technologySkills!,
+                    ),
+                  ],
                 ),
-                TechnologicalStackSection(skillGroups: state.technologySkills!),
-                WorkSection(),
-                ProjectsSection(),
-                EducationSection(),
-                ContactsSection(),
-              ],
+              ),
             ),
           ),
-        ),
+          Container(
+            width: double.infinity,
+            color: context.appColors.secondary,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+              child: Center(
+                child: SizedBox(
+                  width: 1024,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 16,
+                    children: [
+                      WorkSection(workExperiences: state.workExperiences!),
+                      const ProjectsSection(),
+                      const EducationSection(),
+                      const ContactsSection(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

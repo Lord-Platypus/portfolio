@@ -1,23 +1,23 @@
 import 'package:go_router/go_router.dart';
-import 'package:portfolio/core/navigation/routes.dart';
-import 'package:portfolio/features/portfolio/presentation/pages/portfolio_page.dart';
-import 'package:portfolio/features/start/presentation/start_page.dart';
 
+import '../../features/portfolio/presentation/pages/portfolio_page.dart';
+import '../../features/start/presentation/start_page.dart';
 import '../presentation/pages/error_page.dart';
+import 'routes.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: Routes.portfolio,
   routes: [
     GoRoute(
       path: Routes.start,
-      builder: (context, state) => StartPage(),
+      builder: (context, state) => const StartPage(),
       routes: [],
     ),
     GoRoute(
       name: Routes.portfolio,
       path: Routes.portfolio,
-      builder: (context, state) => PortfolioPage(),
+      builder: (context, state) => const PortfolioPage(),
     ),
   ],
-  errorBuilder: (context, state) => ErrorPage(),
+  errorBuilder: (context, state) => const ErrorPage(),
 );

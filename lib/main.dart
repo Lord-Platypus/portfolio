@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/navigation/app_router.dart';
-import 'package:portfolio/core/utils/theme/themes.dart';
 
+import 'core/navigation/app_router.dart';
 import 'core/utils/theme/theme_builder.dart';
+import 'core/utils/theme/themes.dart';
 import 'injection_container.dart';
 import 'l10n/app_localizations.dart';
 

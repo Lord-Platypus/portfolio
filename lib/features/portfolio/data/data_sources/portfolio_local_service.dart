@@ -1,13 +1,14 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:portfolio/features/portfolio/data/data_sources/portfolio_data_source.dart';
-import 'package:portfolio/features/portfolio/data/models/language_skill.dart';
-import 'package:portfolio/features/portfolio/data/models/personal_info.dart';
 
 import '../../domain/enums/skill_level_enum.dart';
+import '../models/language_skill.dart';
+import '../models/personal_info.dart';
 import '../models/technology_skill.dart';
 import '../models/technology_skill_group.dart';
+import '../models/work_experience.dart';
+import 'portfolio_data_source.dart';
 
 class PortfolioLocalService implements PortfolioDataSource {
   @override
@@ -184,6 +185,111 @@ class PortfolioLocalService implements PortfolioDataSource {
               level: SkillLevelEnum.senior,
             ),
           ],
+        ),
+      ],
+      requestOptions: RequestOptions(path: ''),
+      statusCode: HttpStatus.ok,
+    );
+  }
+
+  @override
+  Future<Response<List<WorkExperienceModel>>> getWorkExperiences() async {
+    return Response(
+      data: [
+        WorkExperienceModel(
+          companyName: "Qbitsoft",
+          position: "Senior Flutter Developer",
+          startDate: DateTime(2024, 10),
+          endDate: null,
+          description:
+              "Sviluppo di applicazioni mobile e web in Flutter con focus su autenticazione, integrazione servizi esterni e gestione team frontend.",
+          projects: [
+            "App per ascensoristi",
+            "Assistente digitale per persone nello spettro autistico",
+            "Companion app per gestionale interno",
+          ],
+          technologies: [
+            "Flutter",
+            "Auth0",
+            "Firebase",
+            "REST API",
+            "Tensorflow Lite",
+            "Unity AR",
+          ],
+        ),
+        WorkExperienceModel(
+          companyName: "Dreaming Lab",
+          position: "Senior Flutter Developer",
+          startDate: DateTime(2021, 11),
+          endDate: DateTime(2024, 10),
+          description:
+              "Sviluppo di soluzioni native e web per gestione magazzini e supporto al backend.",
+          projects: [
+            "Gestionale magazzino vini",
+            "Supporto backend .NET (Serenity + SQL Server)",
+          ],
+          technologies: [
+            "Flutter",
+            "Auth0",
+            "Firebase",
+            "fl_chart",
+            "PDF generation",
+            "Responsive UI",
+            ".NET",
+            "SQL Server",
+          ],
+        ),
+        WorkExperienceModel(
+          companyName: "Freelance",
+          position: "Full Stack Developer",
+          startDate: DateTime(2020, 2),
+          endDate: null,
+          description:
+              "Sviluppo end-to-end di app native e web con Flutter per aziende private.",
+          projects: [
+            "Delivery per pasticceria",
+            "App prenotazione parcheggi",
+            "Gestionale studio medico ortopedico",
+            "App per test oculistici post-operatori",
+          ],
+          technologies: [
+            "Flutter",
+            "Firebase",
+            "Stripe",
+            "Google Maps API",
+            "Flutter Web",
+            "REST API",
+            "In-app Purchase",
+          ],
+        ),
+        WorkExperienceModel(
+          companyName: "Capgemini (presso Arca Assicurazioni)",
+          position: "Developer",
+          startDate: DateTime(2019, 5),
+          endDate: DateTime(2020, 2),
+          description:
+              "Sviluppo batch per automazione task e query complesse su database.",
+          projects: ["Automazione batch per task interni"],
+          technologies: ["Groovy", "Java", "PL/SQL", "Oracle DB"],
+        ),
+        WorkExperienceModel(
+          companyName: "Accenture (presso UnipolSai)",
+          position: "Developer",
+          startDate: DateTime(2018, 11),
+          endDate: DateTime(2019, 5),
+          description:
+              "Evolutive e bug fixes su gestionale UnipolSai con Angular frontend e Java backend.",
+          projects: ["Gestionale UnipolSai"],
+          technologies: ["Angular", "Java", "Spring"],
+        ),
+        WorkExperienceModel(
+          companyName: "Accenture (presso Deutsche Bank)",
+          position: "Developer",
+          startDate: DateTime(2018, 8),
+          endDate: DateTime(2018, 11),
+          description: "Creazione query e procedure su database Oracle.",
+          projects: ["Database Deutsche Bank"],
+          technologies: ["Oracle DB", "PL/SQL"],
         ),
       ],
       requestOptions: RequestOptions(path: ''),

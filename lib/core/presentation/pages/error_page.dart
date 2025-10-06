@@ -11,12 +11,12 @@ class ErrorPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text('Error Page'),
+          const Text('Error Page'),
           ElevatedButton(
             onPressed: () {
               GoRouter.of(context).go(Routes.start);
             },
-            child: Text('Go Home'),
+            child: const Text('Go Home'),
           ),
         ],
       ),
