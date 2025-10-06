@@ -57,26 +57,34 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final position = Text(
+      work.position,
+      style: Theme.of(
+        context,
+      ).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+    );
+
+    final dateRange = Text(
+      '${work.startDate.format('MMM yyyy')} - ${work.endDate?.format('MMM yyyy') ?? context.localizations.present}',
+      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+      ),
+    );
+
+    final child = context.isMobile()
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [dateRange, position],
+          )
+        : Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [position, dateRange],
+          );
+
     return Padding(
       padding: const EdgeInsets.fromLTRB(32, 32, 32, 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            '${work.startDate.format('MMM yyyy')} - ${work.endDate?.format('MMM yyyy') ?? context.localizations.present}',
-            style: Theme.of(context).textTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-          Text(
-            work.position,
-            style: Theme.of(
-              context,
-            ).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
+      child: child,
     );
   }
 }
