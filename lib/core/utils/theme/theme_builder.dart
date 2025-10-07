@@ -27,7 +27,7 @@ ThemeData buildTheme(AppColors colors) {
     cardTheme: CardThemeData(
       color: colors.surface,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(16),
         side: BorderSide(color: colors.border, width: 2),
       ),
       elevation: 0,
@@ -44,11 +44,20 @@ ThemeData buildTheme(AppColors colors) {
       unselectedLabelColor: colors.border,
       indicator: BoxDecoration(
         color: colors.border,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(8))
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(8)),
       ),
       tabAlignment: TabAlignment.start,
-        labelPadding: const EdgeInsets.symmetric(horizontal: 4),
-        splashBorderRadius: const BorderRadius.vertical(top: Radius.circular(8))
+      labelPadding: const EdgeInsets.symmetric(horizontal: 4),
+      splashBorderRadius: const BorderRadius.vertical(top: Radius.circular(8)),
+    ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: ButtonStyle(
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+        backgroundColor: WidgetStatePropertyAll(colors.primary),
+        foregroundColor: WidgetStatePropertyAll(colors.secondary),
+      ),
     ),
     extensions: [colors],
   );

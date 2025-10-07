@@ -10,8 +10,8 @@ import '../cubit/portfolio_cubit.dart';
 import '../widgets/about_section.dart';
 import '../widgets/contacts_section.dart';
 import '../widgets/education_section.dart';
+import '../widgets/github_section.dart';
 import '../widgets/hero_section.dart';
-import '../widgets/projects_section.dart';
 import '../widgets/technological_stack_section.dart';
 import '../widgets/work/work_section.dart';
 
@@ -48,7 +48,7 @@ class PortfolioPage extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
             child: Center(
               child: SizedBox(
                 width: 1024,
@@ -81,7 +81,7 @@ class PortfolioPage extends StatelessWidget {
                     spacing: 16,
                     children: [
                       WorkSection(workExperiences: state.workExperiences!),
-                      const ProjectsSection(),
+                      const GithubSection(),
                       const EducationSection(),
                       const ContactsSection(),
                     ],

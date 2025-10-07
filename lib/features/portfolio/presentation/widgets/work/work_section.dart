@@ -36,10 +36,7 @@ class _WorkSectionState extends State<WorkSection> {
   Widget build(BuildContext context) {
     final sectionTitle = AutoSizeText(
       context.localizations.workingExperience,
-      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
+      style: Theme.of(context).textTheme.titleLarge?.copyWith((color: context.appColors.onSecondary),
     );
 
     final listView = SizedBox(

@@ -15,7 +15,9 @@ class TechnologicalStackSection extends StatelessWidget {
       context.localizations.technologicalStack,
       style: Theme.of(
         context,
-      ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+      )
+          .textTheme
+          .titleLarge,
     );
 
     final description = Text(

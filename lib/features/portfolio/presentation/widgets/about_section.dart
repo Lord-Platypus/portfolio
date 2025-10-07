@@ -15,7 +15,9 @@ class AboutSection extends StatelessWidget {
       context.localizations.about,
       style: Theme.of(
         context,
-      ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+      )
+          .textTheme
+          .titleLarge,
     );
 
     final description = AutoSizeText(
