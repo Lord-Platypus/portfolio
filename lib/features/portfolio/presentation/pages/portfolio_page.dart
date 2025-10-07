@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../../core/utils/extensions/build_context_extension.dart';
+import '../../domain/usecases/get_education_elements.dart';
 import '../../domain/usecases/get_personal_info.dart';
 import '../../domain/usecases/get_technology_skills.dart';
 import '../../domain/usecases/get_work_experiences.dart';
@@ -25,6 +26,7 @@ class PortfolioPage extends StatelessWidget {
         getPersonalInfoUserCase: GetIt.I<GetPersonalInfoUserCase>(),
         getTechnologySkillsCase: GetIt.I<GetTechnologySkillsCase>(),
         getWorkExperiencesCase: GetIt.I<GetWorkExperiencesCase>(),
+        getEducationalElements: GetIt.I<GetEducationElementsCase>(),
       )..getPortfolioInfos(),
       child: Scaffold(
         body: BlocBuilder<PortfolioCubit, PortfolioState>(
@@ -82,7 +84,9 @@ class PortfolioPage extends StatelessWidget {
                     children: [
                       WorkSection(workExperiences: state.workExperiences!),
                       const GithubSection(),
-                      const EducationSection(),
+                      EducationSection(
+                        educationElements: state.educationElements!,
+                      ),
                       const ContactsSection(),
                     ],
                   ),

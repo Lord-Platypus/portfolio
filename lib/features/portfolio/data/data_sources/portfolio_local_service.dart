@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 
 import '../../domain/enums/skill_level_enum.dart';
+import '../models/education_element.dart';
 import '../models/language_skill.dart';
 import '../models/personal_info.dart';
 import '../models/technology_skill.dart';
@@ -290,6 +291,56 @@ class PortfolioLocalService implements PortfolioDataSource {
           description: "Creazione query e procedure su database Oracle.",
           projects: ["Database Deutsche Bank"],
           technologies: ["Oracle DB", "PL/SQL"],
+        ),
+      ],
+      requestOptions: RequestOptions(path: ''),
+      statusCode: HttpStatus.ok,
+    );
+  }
+
+  @override
+  Future<Response<List<EducationElementModel>>> getEducationElements() async {
+    return Response(
+      data: [
+        EducationElementModel(
+          title: '.NET',
+          startDate: DateTime(2025, 9),
+        ),
+        EducationElementModel(
+          title: 'Algoritmi e strutture dati • Udemy',
+          startDate: DateTime(2025, 6),
+          endDate: DateTime(2025, 9),
+        ),
+        EducationElementModel(
+          title: 'Corso Godot • Udemy',
+          startDate: DateTime(2023, 9),
+          endDate: DateTime(2024, 2),
+        ),
+        EducationElementModel(
+          title: 'Corso Unity • Udemy',
+          startDate: DateTime(2021, 1),
+          endDate: DateTime(2021, 4),
+        ),
+        EducationElementModel(
+          title: 'Corso Flutter • Udacity',
+          startDate: DateTime(2019, 10),
+          endDate: DateTime(2020, 1),
+        ),
+        EducationElementModel(
+          title: 'Corso Android base • Udacity',
+          startDate: DateTime(2018, 6),
+          endDate: DateTime(2019, 7),
+        ),
+        EducationElementModel(
+          title: 'Corso Java 8 (base) • Manpower',
+          startDate: DateTime(2018, 6),
+          endDate: DateTime(2018, 7),
+        ),
+        EducationElementModel(
+          title:
+          'Laurea triennale in Ingegneria informatica (in pausa) • Politecnico di Milano',
+          startDate: DateTime(2015, 10),
+          endDate: DateTime(2018, 6),
         ),
       ],
       requestOptions: RequestOptions(path: ''),

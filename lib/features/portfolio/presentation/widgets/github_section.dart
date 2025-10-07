@@ -16,7 +16,7 @@ class GithubSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           AutoSizeText(
-            "Vuoi vedere come programmo? Questo progetto è stato sviluppato con Flutter",
+            context.localizations.githubSectionTitle,
             style: Theme.of(context).textTheme.headlineMedium!.copyWith(
               color: context.appColors.onSecondary,
               fontWeight: FontWeight.normal,

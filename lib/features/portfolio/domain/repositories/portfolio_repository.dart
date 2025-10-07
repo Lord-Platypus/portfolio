@@ -1,4 +1,5 @@
 import '../../../../core/resources/data_state.dart';
+import '../entities/education_element.dart';
 import '../entities/personal_info.dart';
 import '../entities/technology_skill_group.dart';
 import '../entities/work_experience.dart';
@@ -9,4 +10,6 @@ abstract class PortfolioRepository {
   Future<DataState<List<TechnologySkillGroupEntity>>> getTechnologySkills();
 
   Future<DataState<List<WorkExperienceEntity>>> getWorkExperiences();
+
+  Future<DataState<List<EducationElementEntity>>> getEducationElements();
 }

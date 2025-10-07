@@ -5,5 +5,6 @@
     "workingExperience": "Working Experience",
     "company": "Company",
     "projects": "Projects",
-    "present": "Present"
+    "present": "Present",
+    "githubSectionTitle": "Would you like to see how I program? This project was developed with Flutter"
 }

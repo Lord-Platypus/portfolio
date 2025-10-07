@@ -5,6 +5,7 @@ import 'features/portfolio/data/data_sources/portfolio_data_source.dart';
 import 'features/portfolio/data/data_sources/portfolio_local_service.dart';
 import 'features/portfolio/data/repositories/portfolio_repository_impl.dart';
 import 'features/portfolio/domain/repositories/portfolio_repository.dart';
+import 'features/portfolio/domain/usecases/get_education_elements.dart';
 import 'features/portfolio/domain/usecases/get_personal_info.dart';
 import 'features/portfolio/domain/usecases/get_technology_skills.dart';
 import 'features/portfolio/domain/usecases/get_work_experiences.dart';
@@ -25,4 +26,6 @@ Future<void> initializeDependency() async {
   sl.registerSingleton<GetPersonalInfoUserCase>(GetPersonalInfoUserCase(sl()));
   sl.registerSingleton<GetTechnologySkillsCase>(GetTechnologySkillsCase(sl()));
   sl.registerSingleton<GetWorkExperiencesCase>(GetWorkExperiencesCase(sl()));
+  sl.registerSingleton<GetEducationElementsCase>(
+      GetEducationElementsCase(sl()));
 }

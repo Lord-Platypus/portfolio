@@ -3,9 +3,11 @@ import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../../core/resources/data_state.dart';
+import '../../domain/entities/education_element.dart';
 import '../../domain/entities/personal_info.dart';
 import '../../domain/entities/technology_skill_group.dart';
 import '../../domain/entities/work_experience.dart';
+import '../../domain/usecases/get_education_elements.dart';
 import '../../domain/usecases/get_personal_info.dart';
 import '../../domain/usecases/get_technology_skills.dart';
 import '../../domain/usecases/get_work_experiences.dart';
@@ -16,14 +18,17 @@ class PortfolioCubit extends Cubit<PortfolioState> {
   final GetPersonalInfoUserCase _getPersonalInfoUserCase;
   final GetTechnologySkillsCase _getTechnologySkillsCase;
   final GetWorkExperiencesCase _getWorkExperiencesCase;
+  final GetEducationElementsCase _getEducationElementsCase;
 
   PortfolioCubit({
     required GetPersonalInfoUserCase getPersonalInfoUserCase,
     required GetTechnologySkillsCase getTechnologySkillsCase,
     required GetWorkExperiencesCase getWorkExperiencesCase,
+    required GetEducationElementsCase getEducationalElements,
   }) : _getPersonalInfoUserCase = getPersonalInfoUserCase,
        _getTechnologySkillsCase = getTechnologySkillsCase,
        _getWorkExperiencesCase = getWorkExperiencesCase,
+       _getEducationElementsCase = getEducationalElements,
        super(PortfolioLoading());
 
   Future<void> getPortfolioInfos() async {
@@ -31,6 +36,7 @@ class PortfolioCubit extends Cubit<PortfolioState> {
       _getPersonalInfoUserCase.call(),
       _getTechnologySkillsCase.call(),
       _getWorkExperiencesCase.call(),
+      _getEducationElementsCase.call(),
     ];
 
     final results = await Future.wait(futures);
@@ -49,6 +55,8 @@ class PortfolioCubit extends Cubit<PortfolioState> {
             (results[1] as DataSuccess<List<TechnologySkillGroupEntity>>).data,
         workExperiences:
             (results[2] as DataSuccess<List<WorkExperienceEntity>>).data,
+        educationElements:
+            (results[3] as DataSuccess<List<EducationElementEntity>>).data,
       ),
     );
   }

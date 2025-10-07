@@ -6,11 +6,13 @@ sealed class PortfolioState extends Equatable {
     this.exception,
     this.technologySkills,
     this.workExperiences,
+    this.educationElements,
   });
 
   final PersonalInfoEntity? personalInfo;
   final List<TechnologySkillGroupEntity>? technologySkills;
   final List<WorkExperienceEntity>? workExperiences;
+  final List<EducationElementEntity>? educationElements;
   final DioException? exception;
 
   @override
@@ -18,6 +20,7 @@ sealed class PortfolioState extends Equatable {
     personalInfo!,
     technologySkills!,
     workExperiences!,
+    educationElements!,
     exception,
   ];
 }
@@ -29,6 +32,7 @@ final class PortfolioDone extends PortfolioState {
     required super.personalInfo,
     required super.technologySkills,
     required super.workExperiences,
+    required super.educationElements,
   });
 }
 
