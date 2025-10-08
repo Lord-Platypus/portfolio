@@ -10,7 +10,7 @@ import '../../domain/usecases/get_work_experiences.dart';
 import '../cubit/portfolio_cubit.dart';
 import '../widgets/about_section.dart';
 import '../widgets/contacts_section.dart';
-import '../widgets/education_section.dart';
+import '../widgets/education/education_section.dart';
 import '../widgets/github_section.dart';
 import '../widgets/hero_section.dart';
 import '../widgets/technological_stack_section.dart';
@@ -84,6 +84,7 @@ class PortfolioPage extends StatelessWidget {
                     children: [
                       WorkSection(workExperiences: state.workExperiences!),
                       const GithubSection(),
+                      const Divider(),
                       EducationSection(
                         educationElements: state.educationElements!,
                       ),

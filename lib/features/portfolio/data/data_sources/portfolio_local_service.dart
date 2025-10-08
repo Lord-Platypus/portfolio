@@ -303,42 +303,51 @@ class PortfolioLocalService implements PortfolioDataSource {
     return Response(
       data: [
         EducationElementModel(
-          title: '.NET',
-          startDate: DateTime(2025, 9),
+          title: 'Algoritmi e strutture dati',
+          institution: 'Udemy',
+          description: 'Corso avanzato su algoritmi e data structure.',
+          startDate: DateTime(2023, 6),
         ),
         EducationElementModel(
-          title: 'Algoritmi e strutture dati • Udemy',
-          startDate: DateTime(2025, 6),
-          endDate: DateTime(2025, 9),
-        ),
-        EducationElementModel(
-          title: 'Corso Godot • Udemy',
+          title: 'Corso Godot',
+          institution: 'Udemy',
+          description: 'Introduzione allo sviluppo di giochi con Godot.',
           startDate: DateTime(2023, 9),
           endDate: DateTime(2024, 2),
         ),
         EducationElementModel(
-          title: 'Corso Unity • Udemy',
+          title: 'Corso Unity',
+          institution: 'Udemy',
+          description: 'Fondamenti di game development in Unity.',
           startDate: DateTime(2021, 1),
           endDate: DateTime(2021, 4),
         ),
         EducationElementModel(
-          title: 'Corso Flutter • Udacity',
+          title: 'Corso Flutter',
+          institution: 'Udacity',
+          description: 'Sviluppo app cross-platform con Flutter.',
           startDate: DateTime(2019, 10),
           endDate: DateTime(2020, 1),
         ),
         EducationElementModel(
-          title: 'Corso Android base • Udacity',
+          title: 'Corso Android base',
+          institution: 'Udacity',
+          description: 'Basi dello sviluppo Android con Java.',
           startDate: DateTime(2018, 6),
           endDate: DateTime(2019, 7),
         ),
         EducationElementModel(
-          title: 'Corso Java 8 (base) • Manpower',
+          title: 'Corso Java 8 (base)',
+          institution: 'Manpower',
+          description: 'Concetti fondamentali di Java 8.',
           startDate: DateTime(2018, 6),
           endDate: DateTime(2018, 7),
         ),
         EducationElementModel(
-          title:
-          'Laurea triennale in Ingegneria informatica (in pausa) • Politecnico di Milano',
+          title: 'Laurea in Ingegneria informatica',
+          institution: 'Politecnico di Milano',
+          description:
+              'Percorso universitario in ingegneria informatica, in pausa.',
           startDate: DateTime(2015, 10),
           endDate: DateTime(2018, 6),
         ),

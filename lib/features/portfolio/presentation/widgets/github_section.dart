@@ -11,24 +11,28 @@ class GithubSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        spacing: 32,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          AutoSizeText(
-            context.localizations.githubSectionTitle,
-            style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-              color: context.appColors.onSecondary,
-              fontWeight: FontWeight.normal,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 64),
+        child: Column(
+          spacing: 32,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            AutoSizeText(
+              context.localizations.githubSectionTitle,
+              style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                color: context.appColors.onSecondary,
+                fontWeight: FontWeight.normal,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
 
-          FilledButton.icon(
-            onPressed: () => launchUrl(Uri.parse(githubUrl)),
-            icon: const Icon(Icons.link),
-            label: const Text("Github"),
-          ),
-        ],
+            FilledButton.icon(
+              onPressed: () => launchUrl(Uri.parse(githubUrl)),
+              icon: const Icon(Icons.link),
+              label: const Text("Github"),
+            ),
+          ],
+        ),
       ),
     );
   }
