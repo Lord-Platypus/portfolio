@@ -88,7 +88,8 @@ class PortfolioPage extends StatelessWidget {
                       EducationSection(
                         educationElements: state.educationElements!,
                       ),
-                      const ContactsSection(),
+                      const Divider(),
+                      ContactsSection(personalInfo: state.personalInfo!),
                     ],
                   ),
                 ),

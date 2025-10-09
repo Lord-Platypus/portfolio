@@ -27,7 +27,7 @@ class WorkExperienceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _Header(work: work),
-            Divider(color: context.appColors.border, thickness: 1, height: 0),
+            Divider(color: context.appColors.border, thickness: 1, height: 1),
             _Body(work: work),
             Expanded(
               child: LayoutBuilder(

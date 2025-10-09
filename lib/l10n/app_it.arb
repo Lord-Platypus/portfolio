@@ -7,5 +7,7 @@
     "projects": "Progetti",
     "present": "Presente",
     "githubSectionTitle": "Vuoi vedere come programmo? Questo progetto è stato sviluppato con Flutter",
-    "educationSectionTitle": "Istruzione e formazione"
+    "educationSectionTitle": "Istruzione e formazione",
+    "vatNumber": "P.IVA",
+    "contacts": "Contatti"
 }

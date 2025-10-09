@@ -11,7 +11,12 @@ ThemeData buildTheme(AppColors colors) {
       foregroundColor: colors.onPrimary,
     ),
     cardColor: colors.surface,
-    dividerColor: colors.border,
+    dividerTheme: DividerThemeData(
+      color: colors.onSecondary,
+      radius: BorderRadius.circular(16),
+      space: 64,
+      thickness: 1,
+    ),
     chipTheme: ChipThemeData(
       backgroundColor: colors.primary,
       labelStyle: TextStyle(
@@ -59,6 +64,7 @@ ThemeData buildTheme(AppColors colors) {
         foregroundColor: WidgetStatePropertyAll(colors.secondary),
       ),
     ),
+
     extensions: [colors],
   );
 }

@@ -18,7 +18,7 @@ class EducationCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _CardHeader(element: element),
-          Divider(color: context.appColors.border, thickness: 1, height: 0),
+          Divider(color: context.appColors.border, thickness: 1, height: 1,),
           _CardBody(element: element),
         ],
       ),

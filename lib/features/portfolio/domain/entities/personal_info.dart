@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 
-import 'language_skill.dart';
 
 class PersonalInfoEntity extends Equatable {
   final String name;
@@ -11,11 +10,9 @@ class PersonalInfoEntity extends Equatable {
   final String city;
   final String country;
   final String postalCode;
-  final DateTime birthDate;
-  final String educationalQualification;
-  final List<LanguageSkillEntity> languageSkills;
   final String email;
   final String phone;
+  final String vatNumber;
   final String aboutMe;
   final List<String> aboutLabels;
 
@@ -28,16 +25,16 @@ class PersonalInfoEntity extends Equatable {
     required this.city,
     required this.country,
     required this.postalCode,
-    required this.birthDate,
-    required this.educationalQualification,
-    required this.languageSkills,
     required this.email,
     required this.phone,
+    required this.vatNumber,
     required this.aboutMe,
     required this.aboutLabels,
   });
 
   String get fullName => '$name $surname';
+
+  String get fullAddress => '$address, $city, $postalCode, $country';
 
   @override
   List<Object?> get props => [
@@ -49,11 +46,10 @@ class PersonalInfoEntity extends Equatable {
     city,
     country,
     postalCode,
-    birthDate,
-    educationalQualification,
-    languageSkills,
     email,
     phone,
+    vatNumber,
     aboutMe,
+    aboutLabels,
   ];
 }

@@ -7,5 +7,7 @@
     "projects": "Projects",
     "present": "Present",
     "githubSectionTitle": "Would you like to see how I program? This project was developed with Flutter",
-    "educationSectionTitle": "Education & Training"
+    "educationSectionTitle": "Education & Training",
+    "vatNumber": "VAT Number",
+    "contacts": "Contacts"
 }

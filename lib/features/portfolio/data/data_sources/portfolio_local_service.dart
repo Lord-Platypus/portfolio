@@ -4,7 +4,6 @@ import 'package:dio/dio.dart';
 
 import '../../domain/enums/skill_level_enum.dart';
 import '../models/education_element.dart';
-import '../models/language_skill.dart';
 import '../models/personal_info.dart';
 import '../models/technology_skill.dart';
 import '../models/technology_skill_group.dart';
@@ -21,19 +20,13 @@ class PortfolioLocalService implements PortfolioDataSource {
         title: "Senior Flutter Developer",
         profileImageUrl:
             "https://i.pinimg.com/736x/a7/20/12/a72012de9e71f2b6676f8417c462e57c.jpg",
-        // metti un placeholder o un tuo link reale
         address: "Loc. Campara 23",
-        city: "Pastrengo",
+        city: "Pastrengo (VR)",
         country: "Italy",
         postalCode: "37010",
-        birthDate: DateTime(1993, 4, 28),
-        educationalQualification: "Diploma di Liceo Scientifico Tecnologico",
-        languageSkills: [
-          LanguageSkillModel(language: "Italian", proficiency: "Native"),
-          LanguageSkillModel(language: "English", proficiency: "B2/C1"),
-        ],
         email: "emanuele.vinci.dev@gmail.com",
         phone: "+39 334 1089441",
+        vatNumber: "04702870231",
         aboutMe:
             "I am a Senior Flutter Developer with a strong background in building cross-platform apps for both mobile and web. Over the years I have delivered projects ranging from internal business tools to consumer apps, often leading the frontend side.I focus on scalable architectures, maintainable code, and smooth user experiences.I enjoy working in synergy with designers and backend engineers to bring ideas to production. Alongside client work, I explore game development and contribute to local tech communities.",
         aboutLabels: [

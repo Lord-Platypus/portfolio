@@ -1,5 +1,4 @@
 import '../../domain/entities/personal_info.dart';
-import 'language_skill.dart';
 
 class PersonalInfoModel extends PersonalInfoEntity {
   const PersonalInfoModel({
@@ -11,11 +10,9 @@ class PersonalInfoModel extends PersonalInfoEntity {
     required super.city,
     required super.country,
     required super.postalCode,
-    required super.birthDate,
-    required super.educationalQualification,
-    required super.languageSkills,
     required super.email,
     required super.phone,
+    required super.vatNumber,
     required super.aboutMe,
     required super.aboutLabels,
   });
@@ -30,13 +27,9 @@ class PersonalInfoModel extends PersonalInfoEntity {
       city: json['city'],
       country: json['country'],
       postalCode: json['postalCode'],
-      birthDate: DateTime.parse(json['birthDate']),
-      educationalQualification: json['educationalQualification'],
-      languageSkills: (json['languageSkills'] as List)
-          .map((e) => LanguageSkillModel.fromJson(e))
-          .toList(),
       email: json['email'],
       phone: json['phone'],
+      vatNumber: json['vatNumber'],
       aboutMe: json['aboutMe'],
       aboutLabels: List<String>.from(json['aboutLabels']),
     );
@@ -52,13 +45,9 @@ class PersonalInfoModel extends PersonalInfoEntity {
       'city': city,
       'country': country,
       'postalCode': postalCode,
-      'birthDate': birthDate.toIso8601String(),
-      'educationalQualification': educationalQualification,
-      'languageSkills': languageSkills
-          .map((e) => (e as LanguageSkillModel).toJson())
-          .toList(),
       'email': email,
       'phone': phone,
+      'vatNumber': vatNumber,
       'aboutMe': aboutMe,
       'aboutLabels': aboutLabels,
     };
