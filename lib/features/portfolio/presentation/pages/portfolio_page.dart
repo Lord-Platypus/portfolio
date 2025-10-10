@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../../../core/presentation/pages/error_page.dart';
 import '../../../../core/utils/extensions/build_context_extension.dart';
 import '../../domain/usecases/get_education_elements.dart';
 import '../../domain/usecases/get_personal_info.dart';
@@ -32,11 +33,13 @@ class PortfolioPage extends StatelessWidget {
         builder: (context, state) {
           switch (state) {
             case PortfolioLoading():
-              return const Center(child: CircularProgressIndicator());
+              return const Scaffold(
+                body: Center(child: CircularProgressIndicator()),
+              );
             case PortfolioDone():
               return _buildPage(context, state);
             case PortfolioError():
-              return const Center(child: Icon(Icons.close));
+              return const ErrorPage();
           }
         },
       ),

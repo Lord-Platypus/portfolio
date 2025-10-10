@@ -10,5 +10,6 @@
     "educationSectionTitle": "Education & Training",
     "vatNumber": "VAT Number",
     "contacts": "Contacts",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "somethingWentWrong": "Something went wrong."
 }

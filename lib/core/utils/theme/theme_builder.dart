@@ -6,6 +6,11 @@ import 'themes.dart';
 ThemeData buildTheme(AppColors colors) {
   return portfolioTheme.copyWith(
     scaffoldBackgroundColor: colors.background,
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: colors.primary,
+      strokeCap: StrokeCap.round,
+      strokeWidth: 5,
+    ),
     appBarTheme: AppBarTheme(
       backgroundColor: colors.primary,
       foregroundColor: colors.onPrimary,
