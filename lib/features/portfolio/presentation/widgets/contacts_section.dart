@@ -23,68 +23,60 @@ class ContactsSection extends StatelessWidget {
       context,
     ).textTheme.titleMedium!.copyWith(color: context.appColors.onSecondary);
 
-    final phone = Row(
-      spacing: 16,
-      children: [
-        Icon(Icons.phone, color: context.appColors.onSecondary),
-        RichText(
-          text: TextSpan(
-            style: textStyle,
-            children: [
-              TextSpan(
-                text: personalInfo.phone,
-                style: textStyle,
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () =>
-                      launchUrl(Uri(scheme: "tel", path: personalInfo.phone)),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-
-    final mail = Row(
-      spacing: 16,
-      children: [
-        Icon(Icons.mail, color: context.appColors.onSecondary),
-        RichText(
-          text: TextSpan(
-            style: textStyle,
-            children: [
-              TextSpan(
-                text: personalInfo.email,
-                style: textStyle,
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () => launchUrl(
-                    Uri(scheme: "mailto", path: personalInfo.email),
-                  ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-
-    final vatNumber = Row(
-      spacing: 16,
-      children: [
-        Icon(Icons.numbers, color: context.appColors.onSecondary),
-        Text(
-          "${context.localizations.vatNumber}: ${personalInfo.vatNumber}",
+    final phone = _buildResponsiveRow(
+      context,
+      iconData: Icons.phone,
+      text: RichText(
+        text: TextSpan(
           style: textStyle,
+          children: [
+            TextSpan(
+              text: personalInfo.phone,
+              style: textStyle,
+              recognizer: TapGestureRecognizer()
+                ..onTap = () =>
+                    launchUrl(Uri(scheme: "tel", path: personalInfo.phone)),
+            ),
+          ],
         ),
-      ],
-    );
-    final place = Row(
-      spacing: 16,
-      children: [
-        Icon(Icons.place, color: context.appColors.onSecondary),
-        Text(personalInfo.fullAddress, style: textStyle),
-      ],
+      ),
     );
 
-    final columnChildren = context.isDesktop()
+    final mail = _buildResponsiveRow(
+      context,
+      iconData: Icons.mail,
+      text: RichText(
+        text: TextSpan(
+          style: textStyle,
+          children: [
+            TextSpan(
+              text: personalInfo.email,
+              style: textStyle,
+              recognizer: TapGestureRecognizer()
+                ..onTap = () =>
+                    launchUrl(Uri(scheme: "mailto", path: personalInfo.email)),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    final vatNumber = _buildResponsiveRow(
+      context,
+      iconData: Icons.numbers,
+      text: Text(
+        "${context.localizations.vatNumber}: ${personalInfo.vatNumber}",
+        style: textStyle,
+      ),
+    );
+
+    final place = _buildResponsiveRow(
+      context,
+      iconData: Icons.place,
+      text: Text(personalInfo.fullAddress, style: textStyle),
+    );
+
+    final List<Widget> columnChildren = context.isDesktop()
         ? [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,6 +95,22 @@ class ContactsSection extends StatelessWidget {
       children: [
         title,
         Column(spacing: 16, children: columnChildren),
+      ],
+    );
+  }
+
+  Row _buildResponsiveRow(
+    BuildContext context, {
+    required IconData iconData,
+    required Widget text,
+  }) {
+    final child = context.isMobile() ? Expanded(child: text) : text;
+
+    return Row(
+      spacing: 16,
+      children: [
+        Icon(iconData, color: context.appColors.onSecondary),
+        child,
       ],
     );
   }

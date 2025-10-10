@@ -81,7 +81,7 @@ class PortfolioPage extends StatelessWidget {
               width: double.infinity,
               color: context.appColors.secondary,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 64),
                 child: Center(
                   child: SizedBox(
                     width: maxPageWidth,
