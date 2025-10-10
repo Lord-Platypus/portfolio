@@ -1,16 +1,22 @@
-# portfolio
+## Personal Portfolio – Flutter Web App
 
-A new Flutter project.
+This project was built with **Flutter** to demonstrate my coding style and architectural approach.  
+It follows **Clean Architecture** principles and uses **BLoC** for state management and **GoRouter**
+for navigation.  
+The app is **fully responsive**, adapting its layout seamlessly across different screen sizes.  
+Currently, the backend responses are simulated with mock data, as this is still a **work in progress
+**.  
+I created this portfolio because most of my previous projects are under **NDA**, and I wanted to
+showcase something public.
 
-## Getting Started
+### Tech Stack
 
-This project is a starting point for a Flutter application.
+- **Framework:** Flutter (Web)
+- **Architecture:** Clean Architecture
+- **State Management:** BLoC
+- **Routing:** GoRouter
 
-A few resources to get you started if this is your first Flutter project:
+### Future Improvements
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Connect to a real backend
+- Add animations and interactive elements
