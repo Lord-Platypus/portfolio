@@ -28,75 +28,83 @@ class PortfolioPage extends StatelessWidget {
         getWorkExperiencesCase: GetIt.I<GetWorkExperiencesCase>(),
         getEducationalElements: GetIt.I<GetEducationElementsCase>(),
       )..getPortfolioInfos(),
-      child: Scaffold(
-        body: BlocBuilder<PortfolioCubit, PortfolioState>(
-          builder: (context, state) {
-            switch (state) {
-              case PortfolioLoading():
-                return const Center(child: CircularProgressIndicator());
-              case PortfolioDone():
-                return _buildPage(context, state);
-              case PortfolioError():
-                return const Center(child: Icon(Icons.close));
-            }
-          },
-        ),
+      child: BlocBuilder<PortfolioCubit, PortfolioState>(
+        builder: (context, state) {
+          switch (state) {
+            case PortfolioLoading():
+              return const Center(child: CircularProgressIndicator());
+            case PortfolioDone():
+              return _buildPage(context, state);
+            case PortfolioError():
+              return const Center(child: Icon(Icons.close));
+          }
+        },
       ),
     );
   }
 
+  double get maxPageWidth => 1024;
+
   Widget _buildPage(BuildContext context, PortfolioDone state) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
-            child: Center(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
               child: SizedBox(
-                width: 1024,
-                child: Column(
-                  spacing: 64,
-                  children: [
-                    HeroSection(personalInfo: state.personalInfo!),
-                    AboutSection(
-                      aboutMe: state.personalInfo!.aboutMe,
-                      labels: state.personalInfo!.aboutLabels,
-                    ),
-                    TechnologicalStackSection(
-                      skillGroups: state.technologySkills!,
-                    ),
-                  ],
-                ),
+                width: maxPageWidth + 64 * 2,
+                child: HeroSection(personalInfo: state.personalInfo!),
               ),
             ),
-          ),
-          Container(
-            width: double.infinity,
-            color: context.appColors.secondary,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+            const SizedBox(height: 64),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
               child: Center(
                 child: SizedBox(
-                  width: 1024,
+                  width: maxPageWidth,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 16,
+                    spacing: 64,
                     children: [
-                      WorkSection(workExperiences: state.workExperiences!),
-                      const GithubSection(),
-                      const Divider(),
-                      EducationSection(
-                        educationElements: state.educationElements!,
+                      AboutSection(
+                        aboutMe: state.personalInfo!.aboutMe,
+                        labels: state.personalInfo!.aboutLabels,
                       ),
-                      const Divider(),
-                      ContactsSection(personalInfo: state.personalInfo!),
+                      TechnologicalStackSection(
+                        skillGroups: state.technologySkills!,
+                      ),
                     ],
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+            Container(
+              width: double.infinity,
+              color: context.appColors.secondary,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                child: Center(
+                  child: SizedBox(
+                    width: maxPageWidth,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 16,
+                      children: [
+                        WorkSection(workExperiences: state.workExperiences!),
+                        const GithubSection(),
+                        const Divider(),
+                        EducationSection(
+                          educationElements: state.educationElements!,
+                        ),
+                        const Divider(height: 64),
+                        ContactsSection(personalInfo: state.personalInfo!),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

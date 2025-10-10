@@ -19,7 +19,7 @@ class PortfolioLocalService implements PortfolioDataSource {
         surname: "Vinci",
         title: "Senior Flutter Developer",
         profileImageUrl:
-            "https://i.pinimg.com/736x/a7/20/12/a72012de9e71f2b6676f8417c462e57c.jpg",
+            "https://drive.usercontent.google.com/download?id=1TdofDpn2iG6BQSQhPEomeVW-i3WVOQ_1",
         address: "Loc. Campara 23",
         city: "Pastrengo (VR)",
         country: "Italy",

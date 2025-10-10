@@ -28,7 +28,7 @@ class GithubSection extends StatelessWidget {
 
             FilledButton.icon(
               onPressed: () => launchUrl(Uri.parse(githubUrl)),
-              icon: const Icon(Icons.link),
+              icon: const Icon(Icons.code),
               label: const Text("Github"),
             ),
           ],
