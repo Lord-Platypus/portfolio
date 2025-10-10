@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
 final ThemeData portfolioTheme = ThemeData(
-  textTheme: const TextTheme(
+  textTheme: GoogleFonts.interTextTheme().copyWith(
     // Main name (Hero Section)
     headlineLarge: TextStyle(
       fontSize: 36,
