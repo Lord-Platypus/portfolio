@@ -2,8 +2,8 @@ name: Deploy Flutter Web to GitHub Pages
 
 on:
   push:
-    branches: [ main ]        # o la branch che usi
-  workflow_dispatch: { }       # ti permette di far partire la workflow manualmente
+    branches: [ main ]
+  workflow_dispatch: { }
 
 permissions:
   contents: read
