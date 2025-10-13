@@ -32,7 +32,9 @@ jobs:
         run: flutter pub get
 
       - name: Build web release
-        run: flutter build web --release
+        run: |
+          REPO_NAME=${GITHUB_REPOSITORY#*/}
+          flutter build web --release --base-href "/$REPO_NAME/"
 
       - name: Upload pages artifact
         id: upload-pages

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 import 'core/navigation/app_router.dart';
 import 'core/utils/theme/theme_builder.dart';
@@ -8,6 +9,7 @@ import 'l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
   await initializeDependency();
   runApp(const PortfolioApp());
 }
