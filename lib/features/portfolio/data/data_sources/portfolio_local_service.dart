@@ -19,7 +19,7 @@ class PortfolioLocalService implements PortfolioDataSource {
         surname: "Vinci",
         title: "Senior Flutter Developer",
         profileImageUrl:
-            "https://drive.usercontent.google.com/download?id=1TdofDpn2iG6BQSQhPEomeVW-i3WVOQ_1",
+        "https://drive.usercontent.google.com/download?id=1TdofDpn2iG6BQSQhPEomeVW-i3WVOQ_1",
         address: "Loc. Campara 23",
         city: "Pastrengo (VR)",
         country: "Italy",
@@ -28,7 +28,7 @@ class PortfolioLocalService implements PortfolioDataSource {
         phone: "+39 334 1089441",
         vatNumber: "04702870231",
         aboutMe:
-            "I am a Senior Flutter Developer with a strong background in building cross-platform apps for both mobile and web. Over the years I have delivered projects ranging from internal business tools to consumer apps, often leading the frontend side.I focus on scalable architectures, maintainable code, and smooth user experiences.I enjoy working in synergy with designers and backend engineers to bring ideas to production. Alongside client work, I explore game development and contribute to local tech communities.",
+        "I am a Senior Flutter Developer with a strong background in building cross-platform applications for both mobile and web.\nOver the years, I have delivered projects ranging from internal business tools to consumer-facing apps, often leading the frontend side.\nI focus on scalable architectures, maintainable code, and smooth user experiences. I enjoy collaborating closely with designers and backend engineers to bring ideas to life.\nAlongside client work, I explore game development and contribute to local tech communities.",
         aboutLabels: [
           "Flutter",
           "Remote only",
@@ -44,8 +44,8 @@ class PortfolioLocalService implements PortfolioDataSource {
   }
 
   @override
-  Future<Response<List<TechnologySkillGroupModel>>>
-  getTechnologySkills() async {
+  Future<
+      Response<List<TechnologySkillGroupModel>>> getTechnologySkills() async {
     return Response(
       data: [
         TechnologySkillGroupModel(
@@ -53,131 +53,87 @@ class PortfolioLocalService implements PortfolioDataSource {
           skills: [
             TechnologySkillModel(name: "Bloc", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: "Equatable",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "Equatable", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: "GoRouter",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "GoRouter", level: SkillLevelEnum.senior),
             TechnologySkillModel(name: "GetIt", level: SkillLevelEnum.senior),
-
             TechnologySkillModel(
-              name: "Fl Chart",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "Fl Chart", level: SkillLevelEnum.middle),
             TechnologySkillModel(
-              name: "Shared Preferences",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "Shared Preferences", level: SkillLevelEnum.senior),
             TechnologySkillModel(name: "Http", level: SkillLevelEnum.senior),
             TechnologySkillModel(name: "Intl", level: SkillLevelEnum.senior),
             TechnologySkillModel(name: "Dio", level: SkillLevelEnum.senior),
           ],
         ),
         TechnologySkillGroupModel(
-          groupName: 'Programming Languages',
+          groupName: "Programming Languages",
           skills: [
             TechnologySkillModel(name: "Dart", level: SkillLevelEnum.senior),
             TechnologySkillModel(name: "C#", level: SkillLevelEnum.middle),
             TechnologySkillModel(name: "SQL", level: SkillLevelEnum.middle),
             TechnologySkillModel(
-              name: "JavaScript",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "JavaScript", level: SkillLevelEnum.middle),
             TechnologySkillModel(
-              name: "TypeScript",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "TypeScript", level: SkillLevelEnum.middle),
           ],
         ),
-
         TechnologySkillGroupModel(
-          groupName: 'Frameworks',
+          groupName: "Frameworks",
           skills: [
             TechnologySkillModel(name: "Flutter", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: ".NET Serenity",
-              level: SkillLevelEnum.junior,
-            ),
+                name: ".NET Serenity", level: SkillLevelEnum.junior),
             TechnologySkillModel(name: "Godot", level: SkillLevelEnum.middle),
             TechnologySkillModel(name: "Unity", level: SkillLevelEnum.junior),
           ],
         ),
         TechnologySkillGroupModel(
-          groupName: 'Backend & Databases',
+          groupName: "Backend & Databases",
           skills: [
             TechnologySkillModel(
-              name: "Serverpod",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "Serverpod", level: SkillLevelEnum.middle),
             TechnologySkillModel(
-              name: "Firebase",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "Firebase", level: SkillLevelEnum.middle),
             TechnologySkillModel(name: "SQL", level: SkillLevelEnum.middle),
           ],
         ),
         TechnologySkillGroupModel(
-          groupName: 'Tools',
+          groupName: "Tools",
           skills: [
-            TechnologySkillModel(name: "Git", level: SkillLevelEnum.middle),
+            TechnologySkillModel(name: "Git", level: SkillLevelEnum.senior),
             TechnologySkillModel(name: "GitHub", level: SkillLevelEnum.middle),
             TechnologySkillModel(name: "Docker", level: SkillLevelEnum.junior),
             TechnologySkillModel(
-              name: "Visual Studio Code",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "Visual Studio Code", level: SkillLevelEnum.middle),
             TechnologySkillModel(
-              name: "Android Studio",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "Android Studio", level: SkillLevelEnum.middle),
             TechnologySkillModel(name: "DevOps", level: SkillLevelEnum.middle),
           ],
         ),
         TechnologySkillGroupModel(
-          groupName: 'Other',
+          groupName: "Other",
           skills: [
             TechnologySkillModel(
-              name: "Clean Architecture",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "Clean Architecture", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: "Solid Principles",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "SOLID Principles", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: "Agile Methodologies",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "Agile Methodologies", level: SkillLevelEnum.middle),
             TechnologySkillModel(
-              name: "Unit Testing",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "Unit Testing", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: "UI/UX Team Collaboration",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "UI/UX Team Collaboration", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: "Mentoring",
-              level: SkillLevelEnum.middle,
-            ),
+                name: "Mentoring", level: SkillLevelEnum.middle),
             TechnologySkillModel(
-              name: "Problem Solving",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "Problem Solving", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: "End-to-End Development",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "End-to-End Development", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: "App-Store publishing",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "App Store Publishing", level: SkillLevelEnum.senior),
             TechnologySkillModel(
-              name: "Play Store publishing",
-              level: SkillLevelEnum.senior,
-            ),
+                name: "Play Store Publishing", level: SkillLevelEnum.senior),
           ],
         ),
       ],
@@ -196,11 +152,11 @@ class PortfolioLocalService implements PortfolioDataSource {
           startDate: DateTime(2024, 10),
           endDate: null,
           description:
-              "Sviluppo di applicazioni mobile e web in Flutter con focus su autenticazione, integrazione servizi esterni e gestione team frontend.",
+          "Development of mobile and web applications in Flutter with a focus on authentication, external services integration, and frontend team coordination.",
           projects: [
-            "App per ascensoristi",
-            "Assistente digitale per persone nello spettro autistico",
-            "Companion app per gestionale interno",
+            "App for elevator technicians",
+            "Digital assistant for people on the autism spectrum",
+            "Companion app for internal management system",
           ],
           technologies: [
             "Flutter",
@@ -217,10 +173,10 @@ class PortfolioLocalService implements PortfolioDataSource {
           startDate: DateTime(2021, 11),
           endDate: DateTime(2024, 10),
           description:
-              "Sviluppo di soluzioni native e web per gestione magazzini e supporto al backend.",
+          "Development of native and web solutions for warehouse management and backend support.",
           projects: [
-            "Gestionale magazzino vini",
-            "Supporto backend .NET (Serenity + SQL Server)",
+            "Wine warehouse management system",
+            "Backend support (.NET Serenity + SQL Server)",
           ],
           technologies: [
             "Flutter",
@@ -239,12 +195,12 @@ class PortfolioLocalService implements PortfolioDataSource {
           startDate: DateTime(2020, 2),
           endDate: null,
           description:
-              "Sviluppo end-to-end di app native e web con Flutter per aziende private.",
+          "End-to-end development of native and web apps using Flutter for private companies.",
           projects: [
-            "Delivery per pasticceria",
-            "App prenotazione parcheggi",
-            "Gestionale studio medico ortopedico",
-            "App per test oculistici post-operatori",
+            "Delivery app for pastry shop",
+            "Parking booking app",
+            "Management system for orthopedic clinic",
+            "App for post-operative eye tests",
           ],
           technologies: [
             "Flutter",
@@ -257,32 +213,32 @@ class PortfolioLocalService implements PortfolioDataSource {
           ],
         ),
         WorkExperienceModel(
-          companyName: "Capgemini (presso Arca Assicurazioni)",
+          companyName: "Capgemini (at Arca Assicurazioni)",
           position: "Developer",
           startDate: DateTime(2019, 5),
           endDate: DateTime(2020, 2),
           description:
-              "Sviluppo batch per automazione task e query complesse su database.",
-          projects: ["Automazione batch per task interni"],
+          "Batch development for task automation and complex database queries.",
+          projects: ["Batch automation for internal processes"],
           technologies: ["Groovy", "Java", "PL/SQL", "Oracle DB"],
         ),
         WorkExperienceModel(
-          companyName: "Accenture (presso UnipolSai)",
+          companyName: "Accenture (at UnipolSai)",
           position: "Developer",
           startDate: DateTime(2018, 11),
           endDate: DateTime(2019, 5),
           description:
-              "Evolutive e bug fixes su gestionale UnipolSai con Angular frontend e Java backend.",
-          projects: ["Gestionale UnipolSai"],
+          "Maintenance and feature development on UnipolSai management system with Angular frontend and Java backend.",
+          projects: ["UnipolSai Management System"],
           technologies: ["Angular", "Java", "Spring"],
         ),
         WorkExperienceModel(
-          companyName: "Accenture (presso Deutsche Bank)",
+          companyName: "Accenture (at Deutsche Bank)",
           position: "Developer",
           startDate: DateTime(2018, 8),
           endDate: DateTime(2018, 11),
-          description: "Creazione query e procedure su database Oracle.",
-          projects: ["Database Deutsche Bank"],
+          description: "Creation of queries and stored procedures on Oracle databases.",
+          projects: ["Deutsche Bank Database Project"],
           technologies: ["Oracle DB", "PL/SQL"],
         ),
       ],
@@ -296,51 +252,50 @@ class PortfolioLocalService implements PortfolioDataSource {
     return Response(
       data: [
         EducationElementModel(
-          title: 'Algoritmi e strutture dati',
+          title: 'Algorithms and Data Structures',
           institution: 'Udemy',
-          description: 'Corso avanzato su algoritmi e data structure.',
+          description: 'Advanced course on algorithms and data structures.',
           startDate: DateTime(2023, 6),
         ),
         EducationElementModel(
-          title: 'Corso Godot',
+          title: 'Godot Course',
           institution: 'Udemy',
-          description: 'Introduzione allo sviluppo di giochi con Godot.',
+          description: 'Introduction to game development with Godot.',
           startDate: DateTime(2023, 9),
           endDate: DateTime(2024, 2),
         ),
         EducationElementModel(
-          title: 'Corso Unity',
+          title: 'Unity Course',
           institution: 'Udemy',
-          description: 'Fondamenti di game development in Unity.',
+          description: 'Foundations of game development in Unity.',
           startDate: DateTime(2021, 1),
           endDate: DateTime(2021, 4),
         ),
         EducationElementModel(
-          title: 'Corso Flutter',
+          title: 'Flutter Course',
           institution: 'Udacity',
-          description: 'Sviluppo app cross-platform con Flutter.',
+          description: 'Cross-platform app development with Flutter.',
           startDate: DateTime(2019, 10),
           endDate: DateTime(2020, 1),
         ),
         EducationElementModel(
-          title: 'Corso Android base',
+          title: 'Android Fundamentals',
           institution: 'Udacity',
-          description: 'Basi dello sviluppo Android con Java.',
+          description: 'Basics of Android development using Java.',
           startDate: DateTime(2018, 6),
           endDate: DateTime(2019, 7),
         ),
         EducationElementModel(
-          title: 'Corso Java 8 (base)',
+          title: 'Java 8 Fundamentals',
           institution: 'Manpower',
-          description: 'Concetti fondamentali di Java 8.',
+          description: 'Introduction to the fundamentals of Java 8.',
           startDate: DateTime(2018, 6),
           endDate: DateTime(2018, 7),
         ),
         EducationElementModel(
-          title: 'Laurea in Ingegneria informatica',
+          title: 'Bachelor’s Degree',
           institution: 'Politecnico di Milano',
-          description:
-              'Percorso universitario in ingegneria informatica, in pausa.',
+          description: 'University program in computer engineering, currently on hold.',
           startDate: DateTime(2015, 10),
           endDate: DateTime(2018, 6),
         ),

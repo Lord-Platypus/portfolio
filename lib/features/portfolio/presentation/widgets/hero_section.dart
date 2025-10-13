@@ -51,7 +51,7 @@ class HeroSection extends StatelessWidget {
                 border: Border.all(color: context.appColors.border, width: 3),
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: NetworkImage(personalInfo.profileImageUrl),
+                  image: AssetImage("assets/portfolio/profile.jpg"),
                 ),
               ),
             ),
