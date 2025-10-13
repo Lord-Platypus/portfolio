@@ -30,7 +30,8 @@ class AboutSection extends StatelessWidget {
     final chips = Wrap(
       spacing: 8,
       runSpacing: 8,
-      children: labels.map((label) => Chip(label: Text(label))).toList(),
+      children: labels.map((label) =>
+          SizedBox(height: 32, child: Chip(label: Text(label)))).toList(),
     );
 
     final child = context.isMobile()

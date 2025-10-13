@@ -53,7 +53,10 @@ class TechnologicalStackSection extends StatelessWidget {
     final defaultTabController = DefaultTabController(
       length: skillGroups.length,
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * .3,
+        height: MediaQuery
+            .of(context)
+            .size
+            .height * (context.isMobile() ? .5 : .3),
         child: Column(
           children: [
             TabBar(

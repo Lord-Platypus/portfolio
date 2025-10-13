@@ -18,11 +18,15 @@ class WorkSection extends StatefulWidget {
 class _WorkSectionState extends State<WorkSection> {
   final ScrollController _scrollController = ScrollController();
 
-  double get _cardAspectRatio => context.isMobile() ? 3 / 4 : 4 / 3;
+  double get _listViewHeight => context.isMobile() ? 600 : 450;
 
-  double get _listViewHeight => context.isMobile() ? 550 : 450;
+  double get _cardWidth =>
+      (context.isMobile()
+          ? MediaQuery.of(context).size.width
+          : (_listViewHeight * 4 / 3)) -
+      32;
 
-  double get _scrollOffset => _listViewHeight * _cardAspectRatio + 32;
+  double get _scrollOffset => _cardWidth + 32;
 
   void _scroll(double offset) {
     _scrollController.animateTo(
@@ -36,11 +40,9 @@ class _WorkSectionState extends State<WorkSection> {
   Widget build(BuildContext context) {
     final sectionTitle = AutoSizeText(
       context.localizations.workingExperience,
-      style: Theme
-          .of(context)
-          .textTheme
-          .titleLarge
-          ?.copyWith(color: context.appColors.onSecondary),
+      style: Theme.of(
+        context,
+      ).textTheme.titleLarge?.copyWith(color: context.appColors.onSecondary),
     );
 
     final listView = SizedBox(
@@ -49,7 +51,7 @@ class _WorkSectionState extends State<WorkSection> {
         controller: _scrollController,
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) => WorkExperienceCard(
-          aspectRatio: _cardAspectRatio,
+          width: _cardWidth,
           work: widget.workExperiences[index],
           evenIndex: index.isEven,
         ),

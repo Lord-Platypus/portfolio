@@ -8,18 +8,18 @@ class WorkExperienceCard extends StatelessWidget {
   const WorkExperienceCard({
     super.key,
     required this.work,
-    required this.aspectRatio,
+    required this.width,
     required this.evenIndex,
   });
 
   final WorkExperienceEntity work;
-  final double aspectRatio;
+  final double width;
   final bool evenIndex;
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: aspectRatio,
+    return SizedBox(
+      width: width,
       child: Card(
         color: context.appColors.surface,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -139,14 +139,19 @@ class _Body extends StatelessWidget {
             runSpacing: 8,
             children: work.technologies
                 .map(
-                  (e) => Chip(
-                    label: Text(e),
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      side: const BorderSide(width: 0),
+                  (e) =>
+                  SizedBox(
+                    height: 32,
+                    child: Chip(
+                      label: Text(e),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        side: const BorderSide(width: 0),
+                      ),
+                      color: WidgetStatePropertyAll(
+                          context.appColors.secondary),
                     ),
-                    color: WidgetStatePropertyAll(context.appColors.secondary),
                   ),
                 )
                 .toList(),
