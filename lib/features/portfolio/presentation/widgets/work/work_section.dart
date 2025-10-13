@@ -53,7 +53,7 @@ class _WorkSectionState extends State<WorkSection> {
         itemBuilder: (_, index) => WorkExperienceCard(
           width: _cardWidth,
           work: widget.workExperiences[index],
-          evenIndex: index.isEven,
+          cardIndex: index,
         ),
         separatorBuilder: (_, _) => const SizedBox(width: 32),
         itemCount: widget.workExperiences.length,

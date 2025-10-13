@@ -9,15 +9,17 @@ class WorkExperienceCard extends StatelessWidget {
     super.key,
     required this.work,
     required this.width,
-    required this.evenIndex,
+    required this.cardIndex,
   });
 
   final WorkExperienceEntity work;
   final double width;
-  final bool evenIndex;
+  final int cardIndex;
 
   @override
   Widget build(BuildContext context) {
+    final imageIndex = cardIndex % 3 + 1;
+
     return SizedBox(
       width: width,
       child: Card(
@@ -33,10 +35,8 @@ class WorkExperienceCard extends StatelessWidget {
               child: LayoutBuilder(
                 builder: (context, constraints) => constraints.maxHeight > 120
                     ? Center(
-                        child: Image.asset(
-                          evenIndex
-                              ? "assets/portfolio/empty_space_1.jpg"
-                              : "assets/portfolio/empty_space_2.jpg",
+                  child: Image.asset(
+                    "assets/portfolio/empty_space_$imageIndex.jpg",
                           height: 100,
                         ),
                       )
