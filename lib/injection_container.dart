@@ -23,9 +23,11 @@ Future<void> initializeDependency() async {
   sl.registerSingleton<PortfolioRepository>(PortfolioRepositoryImpl(sl()));
 
   // Use Cases
-  sl.registerSingleton<GetPersonalInfoUserCase>(GetPersonalInfoUserCase(sl()));
-  sl.registerSingleton<GetTechnologySkillsCase>(GetTechnologySkillsCase(sl()));
-  sl.registerSingleton<GetWorkExperiencesCase>(GetWorkExperiencesCase(sl()));
-  sl.registerSingleton<GetEducationElementsCase>(
-      GetEducationElementsCase(sl()));
+  sl.registerSingleton<GetPersonalInfoUseCase>(GetPersonalInfoUseCase(sl()));
+  sl.registerSingleton<GetTechnologySkillsUseCase>(
+      GetTechnologySkillsUseCase(sl()));
+  sl.registerSingleton<GetWorkExperiencesUseCase>(
+      GetWorkExperiencesUseCase(sl()));
+  sl.registerSingleton<GetEducationElementsUseCase>(
+      GetEducationElementsUseCase(sl()));
 }

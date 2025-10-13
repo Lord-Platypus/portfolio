@@ -3,11 +3,11 @@ import '../../../../core/usecases/usecase.dart';
 import '../entities/personal_info.dart';
 import '../repositories/portfolio_repository.dart';
 
-class GetPersonalInfoUserCase
+class GetPersonalInfoUseCase
     implements UseCase<DataState<PersonalInfoEntity>, void> {
   final PortfolioRepository _portfolioRepository;
 
-  GetPersonalInfoUserCase(this._portfolioRepository);
+  GetPersonalInfoUseCase(this._portfolioRepository);
 
   @override
   Future<DataState<PersonalInfoEntity>> call({void params}) {

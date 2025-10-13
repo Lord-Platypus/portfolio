@@ -24,10 +24,10 @@ class PortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => PortfolioCubit(
-        getPersonalInfoUserCase: GetIt.I<GetPersonalInfoUserCase>(),
-        getTechnologySkillsCase: GetIt.I<GetTechnologySkillsCase>(),
-        getWorkExperiencesCase: GetIt.I<GetWorkExperiencesCase>(),
-        getEducationalElements: GetIt.I<GetEducationElementsCase>(),
+        getPersonalInfoUserCase: GetIt.I<GetPersonalInfoUseCase>(),
+        getTechnologySkillsCase: GetIt.I<GetTechnologySkillsUseCase>(),
+        getWorkExperiencesCase: GetIt.I<GetWorkExperiencesUseCase>(),
+        getEducationalElements: GetIt.I<GetEducationElementsUseCase>(),
       )..getPortfolioInfos(),
       child: BlocBuilder<PortfolioCubit, PortfolioState>(
         builder: (context, state) {

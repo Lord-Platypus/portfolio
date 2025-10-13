@@ -31,6 +31,9 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
+      - name: Run tests
+        run: flutter test --coverage
+
       - name: Build web release
         run: |
           REPO_NAME=${GITHUB_REPOSITORY#*/}

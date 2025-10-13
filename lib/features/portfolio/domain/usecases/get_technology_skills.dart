@@ -3,11 +3,11 @@ import '../../../../core/usecases/usecase.dart';
 import '../entities/technology_skill_group.dart';
 import '../repositories/portfolio_repository.dart';
 
-class GetTechnologySkillsCase
+class GetTechnologySkillsUseCase
     implements UseCase<DataState<List<TechnologySkillGroupEntity>>, void> {
   final PortfolioRepository _portfolioRepository;
 
-  GetTechnologySkillsCase(this._portfolioRepository);
+  GetTechnologySkillsUseCase(this._portfolioRepository);
 
   @override
   Future<DataState<List<TechnologySkillGroupEntity>>> call({

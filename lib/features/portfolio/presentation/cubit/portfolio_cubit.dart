@@ -15,16 +15,16 @@ import '../../domain/usecases/get_work_experiences.dart';
 part 'portfolio_state.dart';
 
 class PortfolioCubit extends Cubit<PortfolioState> {
-  final GetPersonalInfoUserCase _getPersonalInfoUserCase;
-  final GetTechnologySkillsCase _getTechnologySkillsCase;
-  final GetWorkExperiencesCase _getWorkExperiencesCase;
-  final GetEducationElementsCase _getEducationElementsCase;
+  final GetPersonalInfoUseCase _getPersonalInfoUserCase;
+  final GetTechnologySkillsUseCase _getTechnologySkillsCase;
+  final GetWorkExperiencesUseCase _getWorkExperiencesCase;
+  final GetEducationElementsUseCase _getEducationElementsCase;
 
   PortfolioCubit({
-    required GetPersonalInfoUserCase getPersonalInfoUserCase,
-    required GetTechnologySkillsCase getTechnologySkillsCase,
-    required GetWorkExperiencesCase getWorkExperiencesCase,
-    required GetEducationElementsCase getEducationalElements,
+    required GetPersonalInfoUseCase getPersonalInfoUserCase,
+    required GetTechnologySkillsUseCase getTechnologySkillsCase,
+    required GetWorkExperiencesUseCase getWorkExperiencesCase,
+    required GetEducationElementsUseCase getEducationalElements,
   }) : _getPersonalInfoUserCase = getPersonalInfoUserCase,
        _getTechnologySkillsCase = getTechnologySkillsCase,
        _getWorkExperiencesCase = getWorkExperiencesCase,

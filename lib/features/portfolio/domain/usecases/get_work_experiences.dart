@@ -3,11 +3,11 @@ import '../../../../core/usecases/usecase.dart';
 import '../entities/work_experience.dart';
 import '../repositories/portfolio_repository.dart';
 
-class GetWorkExperiencesCase
+class GetWorkExperiencesUseCase
     implements UseCase<DataState<List<WorkExperienceEntity>>, void> {
   final PortfolioRepository _portfolioRepository;
 
-  GetWorkExperiencesCase(this._portfolioRepository);
+  GetWorkExperiencesUseCase(this._portfolioRepository);
 
   @override
   Future<DataState<List<WorkExperienceEntity>>> call({void params}) {
