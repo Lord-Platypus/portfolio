@@ -9,6 +9,7 @@ import 'features/portfolio/domain/usecases/get_education_elements.dart';
 import 'features/portfolio/domain/usecases/get_personal_info.dart';
 import 'features/portfolio/domain/usecases/get_technology_skills.dart';
 import 'features/portfolio/domain/usecases/get_work_experiences.dart';
+import 'features/portfolio/presentation/cubit/portfolio_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -30,4 +31,13 @@ Future<void> initializeDependency() async {
       GetWorkExperiencesUseCase(sl()));
   sl.registerSingleton<GetEducationElementsUseCase>(
       GetEducationElementsUseCase(sl()));
+
+  // Bloc / Cubit
+  sl.registerFactory<PortfolioCubit>(() =>
+      PortfolioCubit(
+        getPersonalInfoUserCase: sl(),
+        getTechnologySkillsCase: sl(),
+        getWorkExperiencesCase: sl(),
+        getEducationalElements: sl(),
+      ));
 }

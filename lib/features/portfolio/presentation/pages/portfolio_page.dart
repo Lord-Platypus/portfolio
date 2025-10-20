@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 
 import '../../../../core/presentation/pages/error_page.dart';
 import '../../../../core/utils/extensions/build_context_extension.dart';
-import '../../domain/usecases/get_education_elements.dart';
-import '../../domain/usecases/get_personal_info.dart';
-import '../../domain/usecases/get_technology_skills.dart';
-import '../../domain/usecases/get_work_experiences.dart';
+import '../../../../injection_container.dart';
 import '../cubit/portfolio_cubit.dart';
 import '../widgets/about_section.dart';
 import '../widgets/contacts_section.dart';
@@ -22,13 +18,8 @@ class PortfolioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => PortfolioCubit(
-        getPersonalInfoUserCase: GetIt.I<GetPersonalInfoUseCase>(),
-        getTechnologySkillsCase: GetIt.I<GetTechnologySkillsUseCase>(),
-        getWorkExperiencesCase: GetIt.I<GetWorkExperiencesUseCase>(),
-        getEducationalElements: GetIt.I<GetEducationElementsUseCase>(),
-      )..getPortfolioInfos(),
+    return BlocProvider<PortfolioCubit>(
+      create: (context) => sl()..getPortfolioInfos(),
       child: BlocBuilder<PortfolioCubit, PortfolioState>(
         builder: (context, state) {
           switch (state) {
